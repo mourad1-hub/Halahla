@@ -50,23 +50,23 @@ local Image = AddImageLabel(Main, {
 local Paragraph = AddParagraph(Main, {"سكربت عباره عن مجموعه كبيره من مميزات"})
 
 MinimizeButton({
-Image = "rbxassetid://94901238836721",
+Text = "M",
 Size = {55, 55},
-Color = Color3.fromRGB(10, 10, 10),
+Color = Color3.fromRGB(128, 0, 255),
 Corner = true,
 Stroke = true,
-StrokeColor = Color3.fromRGB(255, 255, 255),
+StrokeColor = Color3.fromRGB(128, 0, 255),
 StrokeTransparency = 0,
 })
 local args = {
     [1] = "RolePlayBio",
-    [2] = "SCRIPT MRT_V2"
+    [2] = "<font color="#8000FF">MRT_V2</font>"
 }
 
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1RPNam1eTex1t"):FireServer(unpack(args))
 local args = {
     [1] = "RolePlayName",
-    [2] = "مطور سكربت -MRT_V2-"
+    [2] = "<font color="#8000FF">MRT_V2</font>"
 }
 
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1RPNam1eTex1t"):FireServer(unpack(args))
@@ -448,349 +448,6 @@ _G.boomboxb.Parent = game:GetService'Players'.LocalPlayer.Backpack
 loadstring(_G.boomboxb.Client.Source)() 
 loadstring(_G.boomboxb.Server.Source)()
  end
-})
-local Main = MakeTab({Name = "أكواد سكنات"})
-
---[[
-  Name = "Main" <string> Nome da guia
-]]
-local section = AddSection(Main, {"باقات ورد"})
-AddButton(Main, {
-  Name = "ورد اسود",
-  Callback = function()
-local args = {
-    [1] = 12465465333
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "ورد احمر",
-  Callback = function()
-local args = {
-    [1] = 86738633187728
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "ورد ابيض",
-  Callback = function()
-local args = {
-    [1] = 72175664063418
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "ورد وردي",
-  Callback = function()
-local args = {
-    [1] = 12465478536
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-local section = AddSection(Main, {"حذاء شيطان"})
-AddButton(Main, {
-  Name = "حذاء اسود",
-  Callback = function()
-local args = {
-    [1] = 14388004031
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "حذاء ابيض",
-  Callback = function()
-local args = {
-    [1] = 14388009243
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "حذاء وردي",
-  Callback = function()
-local args = {
-    [1] = 14388006902
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "حذاء اسود احمر",
-  Callback = function()
-local args = {
-    [1] = 14388001192
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "حذاء احمر واسود",
-  Callback = function()
-local args = {
-    [1] = 14388019333
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-local section = AddSection(Main, {"احذيه طويله"})
-AddButton(Main, {
-  Name = "حذاء طويل اسود",
-  Callback = function()
-local args = {
-    [1] = 11433864064
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "حذاء طويل ابيض",
-  Callback = function()
-local args = {
-    [1] = 11111279400
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "حذاء طويل احمر وابيض",
-  Callback = function()
-local args = {
-    [1] = 11708887517
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-local section = AddSection(Main, {"قفازات طويله"})
-AddButton(Main, {
-  Name = "قفاز طويل اسود ",
-  Callback = function()
-local args = {
-    [1] = 10789914680
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "قفاز طويل احمر",
-  Callback = function()
-local args = {
-    [1] = 15209194774
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "قفاز طويل ابيض",
-  Callback = function()
-local args = {
-    [1] = 10789933479
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "قفاز طويل ازرق",
-  Callback = function()
-local args = {
-    [1] = 10789945803
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "قفاز طويل وردي",
-  Callback = function()
-local args = {
-    [1] = 10789939838
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "قفاز طويل أخضر",
-  Callback = function()
-local args = {
-    [1] = 13233318125
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-local section = AddSection(Main, {"قفازات قصيره"})
-AddButton(Main, {
-  Name = "قفاز قصير اسود",
-  Callback = function()
-local args = {
-    [1] = 14915193711
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "قفاز قصير ابيض",
-  Callback = function()
-local args = {
-    [1] = 15066901505
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "قفاز قصير ازرق",
-  Callback = function()
-local args = {
-    [1] = 10714157708
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "قفاز قصير وردي",
-  Callback = function()
-local args = {
-    [1] = 17775444165
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "قفاز قصير اخضر",
-  Callback = function()
-local args = {
-    [1] = 10713817180
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-local section = AddSection(Main, {"أشواك في الجسم"})
-AddButton(Main, {
-  Name = "شوك اسود",
-  Callback = function()
-local args = {
-    [1] = 17406577951
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "شوك ابيض",
-  Callback = function()
-local args = {
-    [1] = 17406634097
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "شوك اسود في جميع أجزاء الجسم",
-  Callback = function()
-local args = {
-    [1] = 13463285148
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-local section = AddSection(Main, {"جايكتات اولاد"})
-AddButton(Main, {
-  Name = "جاكيت اسود",
-  Callback = function()
-local args = {
-    [1] = 9048321833
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "جاكيت اسود مزخرف ابيض",
-  Callback = function()
-local args = {
-    [1] = 15154273975
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-local section = AddSection(Main, {"جايكتات بنوتات"})
-AddButton(Main, {
-  Name = "جاكيت اسود",
-  Callback = function()
-local args = {
-    [1] = 14900095685
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "جاكيت ابيض",
-  Callback = function()
-local args = {
-    [1] = 14849843673
-}
-
-game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
-
-  end
 })
 local Main = MakeTab({Name = "تخريب"})
 
@@ -2258,7 +1915,7 @@ AddButton(Main, {
       Color3.fromRGB(255, 0, 0),     
       Color3.fromRGB(255, 127, 0),   
       Color3.fromRGB(255, 255, 0),  
-      Color3.fromRGB(0, 255, 0),   
+      Color3.fromRGB(128, 0, 255),   
       Color3.fromRGB(0, 0, 255),     
       Color3.fromRGB(75, 0, 130),    
       Color3.fromRGB(148, 0, 211)    
