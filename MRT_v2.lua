@@ -38,18 +38,35 @@ MakeWindow({
     }
   }
 ]]
-local Main = MakeTab({Name = "تحت تطوير "})
+local Main = MakeTab({Name = "معلومات"})
 
 --[[
   Name = "Main" <string> Nome da guia
 ]]
 local Image = AddImageLabel(Main, {
-  Name = "MRT_V2 ",
+  Name = "TREDAX HUB ",
   Image = "rbxassetid://135207208601826"
 })
+local Paragraph = AddParagraph(Main, {"سكربت عباره عن مجموعه كبيره من مميزات"})
+
+MinimizeButton({
+Image = "rbxassetid://94901238836721",
+Size = {55, 55},
+Color = Color3.fromRGB(10, 10, 10),
+Corner = true,
+Stroke = true,
+StrokeColor = Color3.fromRGB(255, 255, 255),
+StrokeTransparency = 0,
+})
+local args = {
+    [1] = "RolePlayBio",
+    [2] = "MRT_V2"
+}
+
+game:GetService("ReplicatedStorage").RE:FindFirstChild("1RPNam1eTex1t"):FireServer(unpack(args))
 local args = {
     [1] = "RolePlayName",
-    [2] = "البحث:MRT_V2"
+    [2] = "MRT_V2"
 }
 
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1RPNam1eTex1t"):FireServer(unpack(args))
