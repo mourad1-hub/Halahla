@@ -2,7 +2,7 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/R7KScript/usernaxo/r
 MakeWindow({
   Hub = {
     Title = "MRT_V2 HUB BROOKHAVEN 1.2V",
-    Animation = "MRT_V2"
+    Animation = "[38;2;128;0;128mMRT_V2[0m"
   },
   Key = {
     KeySystem = false,
@@ -45,28 +45,28 @@ local Main = MakeTab({Name = "معلومات"})
 ]]
 local Image = AddImageLabel(Main, {
   Name = "MRT_V2 HUB ",
-  Image = "rbxassetid://135207208601826"
+  Image = "M"
 })
 local Paragraph = AddParagraph(Main, {"سكربت عباره عن مجموعه كبيره من مميزات"})
 
 MinimizeButton({
-Text = "M",
+Image = "M",
 Size = {55, 55},
-Color = Color3.fromRGB(128, 0, 255),
+Color = Color3.fromRGB(10, 10, 10),
 Corner = true,
 Stroke = true,
-StrokeColor = Color3.fromRGB(128, 0, 255),
+StrokeColor = Color3.fromRGB(128, 0, 128),
 StrokeTransparency = 0,
 })
 local args = {
     [1] = "RolePlayBio",
-    [2] = "<font color="#8000FF">MRT_V2</font>"
+    [2] = "[38;2;128;0;128mSCRIPT MRT_V2[0m"
 }
 
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1RPNam1eTex1t"):FireServer(unpack(args))
 local args = {
     [1] = "RolePlayName",
-    [2] = "<font color="#8000FF">MRT_V2</font>"
+    [2] = "[38;2;128;0;128mMRT_V2[0m"
 }
 
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1RPNam1eTex1t"):FireServer(unpack(args))
@@ -81,7 +81,7 @@ wait(0.1)
 game.StarterGui:SetCore("SendNotification", {
     Title = " تم اشتغل ";
     Text = "سكربت مطور MRT_V2 ";
-      Image = "rbxassetid://136300057076089"; -- MRT_V2
+      Image = "M"; -- MRT_V2
     Duration = 5;
 })
 AddButton(Main, {
@@ -1915,7 +1915,7 @@ AddButton(Main, {
       Color3.fromRGB(255, 0, 0),     
       Color3.fromRGB(255, 127, 0),   
       Color3.fromRGB(255, 255, 0),  
-      Color3.fromRGB(128, 0, 255),   
+      Color3.fromRGB(128, 0, 128),   
       Color3.fromRGB(0, 0, 255),     
       Color3.fromRGB(75, 0, 130),    
       Color3.fromRGB(148, 0, 211)    
