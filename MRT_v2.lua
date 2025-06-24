@@ -1,8 +1,8 @@
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/R7KScript/usernaxo/refs/heads/main/GUI3")))()
 MakeWindow({
   Hub = {
-    Title = "MRT_V2 HUB BROOKHAVEN 1.2V",
-    Animation = "[38;2;128;0;128mMRT_V2[0m"
+    Title = "MRT BROOKHAVEN V2",
+    Animation = "ABBAS SCRIPT"
   },
   Key = {
     KeySystem = false,
@@ -44,56 +44,56 @@ local Main = MakeTab({Name = "معلومات"})
   Name = "Main" <string> Nome da guia
 ]]
 local Image = AddImageLabel(Main, {
-  Name = "MRT_V2 HUB ",
-  Image = "M"
+  Name = "MRT_V2",
+  Image = "rbxassetid://135207208601826"
 })
 local Paragraph = AddParagraph(Main, {"سكربت عباره عن مجموعه كبيره من مميزات"})
 
 MinimizeButton({
-Image = "M",
+Image = "rbxassetid://94901238836721",
 Size = {55, 55},
 Color = Color3.fromRGB(10, 10, 10),
 Corner = true,
 Stroke = true,
-StrokeColor = Color3.fromRGB(128, 0, 128),
+StrokeColor = Color3.fromRGB(255, 255, 255),
 StrokeTransparency = 0,
 })
 local args = {
     [1] = "RolePlayBio",
-    [2] = "[38;2;128;0;128mSCRIPT MRT_V2[0m"
+    [2] = "البحث:MRT_V2"
 }
 
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1RPNam1eTex1t"):FireServer(unpack(args))
 local args = {
     [1] = "RolePlayName",
-    [2] = "[38;2;128;0;128mMRT_V2[0m"
+    [2] = "MRT_V2"
 }
 
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1RPNam1eTex1t"):FireServer(unpack(args))
 wait(0.1)
 game.StarterGui:SetCore("SendNotification", {
     Title = "انتصر";
-    Text = "جاري تحميل..."; -- MRT_V2
+    Text = "جاري تحميل..."; -- ARAB TEAM
     
     Duration = 5;
 })
 wait(0.1)
 game.StarterGui:SetCore("SendNotification", {
     Title = " تم اشتغل ";
-    Text = "سكربت مطور MRT_V2 ";
-      Image = "M"; -- MRT_V2
+    Text = "MRT_V2";
+      Image = "rbxassetid://136300057076089"; -- ARAB TEAM
     Duration = 5;
 })
 AddButton(Main, {
   Name = "نسخ حسابي روبلوكس",
   Callback = function()
-    setclipboard('MRT_V2_OWNER')
+    setclipboard('MOURD1123')
   end
 })
 AddButton(Main, {
   Name = "个نسخ حسابي تيك توك个",
   Callback = function()
-    setclipboard("sex.xvx")
+    setclipboard("MOURD1123")
   end
 })
 local Paragraph = AddParagraph(Main, {"السيرفر"})
@@ -147,6 +147,678 @@ local Main = MakeTab({Name = "سكربتات"})
 ]]
 local section = AddSection(Main, {"سكربتات من صنع مطورين "})
 local section = AddSection(Main, {"سكربتات عشوائية"})
+local Main = MakeTab({Name = "سكن"})
+
+--[[
+  Name = "Main" <string> Nome da guia
+]]
+AddSection(Main, {"نسخ سكنات كاملة"})
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
+local StarterGui = game:GetService("StarterGui")
+
+local RemoteWear = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Wear")
+local RemoteBody = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("ChangeCharacterBody")
+
+local function Notify(title, text)
+    StarterGui:SetCore("SendNotification", {
+        Title = title,
+        Text = text,
+        Duration = 3
+    })
+end
+
+local function Wear(id)
+    if id and id ~= 0 then
+        RemoteWear:InvokeServer(id)
+    end
+end
+
+local function ApplySkinTone(player)
+    local char = player.Character or player.CharacterAdded:Wait()
+    local bodyColors = char:FindFirstChildOfClass("BodyColors")
+    if bodyColors then
+        Wear(bodyColors.HeadColor.Name)
+    end
+end
+
+local function CopyClothing(player)
+    local h = (player.Character or player.CharacterAdded:Wait()):FindFirstChildOfClass("Humanoid")
+    if h then
+        local d = h:GetAppliedDescription()
+        for _, id in ipairs({d.Shirt, d.Pants, d.GraphicTShirt}) do
+            Wear(id)
+            task.wait(0.2)
+        end
+    end
+end
+
+local function CopyAccessories(player)
+    local h = (player.Character or player.CharacterAdded:Wait()):FindFirstChildOfClass("Humanoid")
+    if h then
+        local d = h:GetAppliedDescription()
+        local all = {
+            d.HatAccessory, d.HairAccessory, d.FaceAccessory,
+            d.NeckAccessory, d.ShouldersAccessory, d.FrontAccessory,
+            d.BackAccessory, d.WaistAccessory
+        }
+        for _, accList in ipairs(all) do
+            if accList then
+                for id in string.gmatch(accList, "%d+") do
+                    Wear(tonumber(id))
+                    task.wait(0.2)
+                end
+            end
+        end
+    end
+end
+
+local function CopyBodyParts(player)
+    local h = (player.Character or player.CharacterAdded:Wait()):FindFirstChildOfClass("Humanoid")
+    if h then
+        local d = h:GetAppliedDescription()
+        local bodyIds = {
+            d.Torso, d.RightArm, d.LeftArm,
+            d.RightLeg, d.LeftLeg, d.Head
+        }
+        if RemoteBody then
+            RemoteBody:InvokeServer(bodyIds)
+        else
+            Notify("خطأ", "RemoteBody غير موجود.")
+        end
+    end
+end
+
+local function CopySleeves(player)
+    
+    local h = (player.Character or player.CharacterAdded:Wait()):FindFirstChildOfClass("Humanoid")
+    if h then
+        local d = h:GetAppliedDescription()
+        local sleeveIds = {
+            d.LeftArm, d.RightArm 
+        }
+
+        for _, id in ipairs(sleeveIds) do
+            if id then
+                Wear(id) 
+                task.wait(0.2)
+            end
+        end
+    end
+end
+
+local selectedPlayer = nil
+
+local function GetPlayerList()
+    local list = {}
+    for _, p in ipairs(Players:GetPlayers()) do
+        if p ~= Players.LocalPlayer then
+            table.insert(list, p.Name)
+        end
+    end
+    return list
+end
+
+AddDropdown(Main, {
+    Name = "اختار اللاعب",
+    Default = "",
+    Options = GetPlayerList(),
+    Callback = function(value)
+        selectedPlayer = value
+    end
+})
+
+AddButton(Main, {
+    Name = "نسخ السكن",
+    Callback = function()
+        if not selectedPlayer then
+            Notify("خطأ", "يجب اختيار لاعب أولاً")
+            return
+        end
+
+        local player = Players:FindFirstChild(selectedPlayer)  
+        if not player then return end  
+
+        Notify("جاري النسخ", "جاري نسخ سكن " .. player.Name)  
+
+        task.spawn(function()  
+            
+            CopyBodyParts(player)  
+            task.wait(0.3)  
+            ApplySkinTone(player)  
+            task.wait(0.3)  
+            CopyClothing(player)  
+            task.wait(0.3)  
+            CopyAccessories(player)  
+            task.wait(0.3)  
+            CopySleeves(player) 
+            Notify("تم النسخ", "تم نسخ سكن " .. player.Name .. " بنجاح!")  
+        end)  
+    end
+})
+local Main = MakeTab({Name = "الرؤاس والرجل"})
+
+--[[
+  Name = "Main" <string> Nome da guia
+]]
+local Paragraph = AddParagraph(Main, {"الراس"})
+AddButton(Main, {
+  Name = "رأس روبوت",
+  Callback = function()
+    local args = {
+    [1] = 3210773801
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+
+--[[
+  Name = "Botão teste" <string> nome do seu botão
+  Callback = function()
+    -- funcão do seu botão
+  end
+]]
+AddButton(Main, {
+  Name = "رأس مخفي ",
+  Callback = function()
+    local args = {
+    [1] = 134082579
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+
+--[[
+  Name = "Botão teste" <string> nome do seu botão
+  Callback = function()
+    -- funcão do seu botão
+  end
+]]
+AddButton(Main, {
+  Name = "رأس كوبي | رول ",
+  Callback = function()
+    local args = {
+    [1] = 746767604
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+
+--[[
+  Name = "Botão teste" <string> nome do seu botão
+  Callback = function()
+    -- funcão do seu botão
+  end
+]]
+AddButton(Main, {
+  Name = "عيون زرق ",
+  Callback = function()
+    local args = {
+    [1] = 16580493236
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+
+--[[
+  Name = "Botão teste" <string> nome do seu botão
+  Callback = function()
+    -- funcão do seu botão
+  end
+]]
+local Paragraph = AddParagraph(Main, {"الراجل متنوعه"})
+AddButton(Main, {
+  Name = "رجل عضام ابيض",
+  Callback = function()
+    local args = {
+    [1] = {
+        [1] = 1,
+        [2] = 1,
+        [3] = 1,
+        [4] = 14580308646,
+        [5] = 1,
+        [6] = 1
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
+
+  end
+})
+
+--[[
+  Name = "Botão teste" <string> nome do seu botão
+  Callback = function()
+    -- funcão do seu botão
+  end
+]]
+AddButton(Main, {
+  Name = "رجل عضام اسود",
+  Callback = function()
+    local args = {
+    [1] = {
+        [1] = 1,
+        [2] = 1,
+        [3] = 1,
+        [4] = 14547162578,
+        [5] = 1,
+        [6] = 1
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
+
+  end
+})
+
+--[[
+  Name = "Botão teste" <string> nome do seu botão
+  Callback = function()
+    -- funcão do seu botão
+  end
+]]
+AddButton(Main, {
+  Name = "ارجل رول ",
+  Callback = function()
+    local args = {
+    [1] = {
+        [1] = 1,
+        [2] = 1,
+        [3] = 1,
+        [4] = 3230472745,
+        [5] = 3230470862,
+        [6] = 1
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
+
+  end
+})
+
+--[[
+  Name = "Botão teste" <string> nome do seu botão
+  Callback = function()
+    -- funcão do seu botão
+  end
+]]
+AddButton(Main, {
+  Name = "رجل حديديه",
+  Callback = function()
+    local args = {
+    [1] = {
+        [1] = 1,
+        [2] = 1,
+        [3] = 1,
+        [4] = 17500249989,
+        [5] = 1,
+        [6] = 1
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
+
+  end
+})
+
+--[[
+  Name = "Botão teste" <string> nome do seu botão
+  Callback = function()
+    -- funcão do seu botão
+  end
+]]
+local Main = MakeTab({Name = "الاجسام"})
+
+--[[
+  Name = "Main" <string> Nome da guia
+]]
+AddButton(Main, {
+  Name = "جسم بنت 1",
+  Callback = function()
+local args = {
+    [1] = {
+        [1] = 96491916349570,
+        [2] = 76683091425509,
+        [3] = 75159926897589,
+        [4] = 1,
+        [5] = 1,
+        [6] = 1
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "جسم بنت 2",
+  Callback = function()
+local args = {
+    [1] = {
+        [1] = 96491916349570,
+        [2] = 14854350570,
+        [3] = 14854350451,
+        [4] = 1,
+        [5] = 1,
+        [6] = 1
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "جسم بنت 3",
+  Callback = function()
+local args = {
+    [1] = {
+        [1] = 74302534603111,
+        [2] = 76683091425509,
+        [3] = 75159926897589,
+        [4] = 1,
+        [5] = 1,
+        [6] = 1
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "جسم بنت 4",
+  Callback = function()
+local args = {
+    [1] = {
+        [1] = 16214246112,
+        [2] = 76683091425509,
+        [3] = 16214251181,
+        [4] = 1,
+        [5] = 1,
+        [6] = 1
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "جسم بنت 5",
+  Callback = function()
+local args = {
+    [1] = {
+        [1] = 124754866635882,
+        [2] = 76683091425509,
+        [3] = 75159926897589,
+        [4] = 1,
+        [5] = 1,
+        [6] = 1
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "جسم بنت 6",
+  Callback = function()
+local args = {
+    [1] = {
+        [1] = 18839824113,
+        [2] = 18839824209,
+        [3] = 18839824132,
+        [4] = 1,
+        [5] = 1,
+        [6] = 1
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "جسم بنت 7",
+  Callback = function()
+local args = {
+    [1] = {
+        [1] = 15539008532,
+        [2] = 15539008875,
+        [3] = 15539008680,
+        [4] = 15539008795,
+        [5] = 15539011945,
+        [6] = 1
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
+
+  end
+})
+local section = AddSection(Main, {"أجسام اولاد نحيفين"})
+AddButton(Main, {
+  Name = "جسم ولد نحيف 1",
+  Callback = function()
+local args = {
+    [1] = {
+        [1] = 17754346388,
+        [2] = 1,
+        [3] = 1,
+        [4] = 1,
+        [5] = 1,
+        [6] = 1
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "جسم ولد نحيف 2",
+  Callback = function()
+local args = {
+    [1] = {
+        [1] = 92757812011061,
+        [2] = 99519402284266,
+        [3] = 115905570886697,
+        [4] = 1,
+        [5] = 1,
+        [6] = 1
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
+
+  end
+})
+local section = AddSection(Main, {"أجسام اولاد مشهوره وجميله "})
+AddButton(Main, {
+  Name = "جسم ولد كوبي",
+  Callback = function()
+local args = {
+    [1] = {
+        [1] = 86499666,
+        [2] = 27112039,
+        [3] = 27112052,
+        [4] = 27112068,
+        [5] = 27112056,
+        [6] = 1
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "جسم ولد رول",
+  Callback = function()
+local args = {
+    [1] = {
+        [1] = 27112025,
+        [2] = 27112039,
+        [3] = 27112052,
+        [4] = 3230472745,
+        [5] = 3230470862,
+        [6] = 1
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
+
+  end
+})
+local section = AddSection(Main, {"أجسام اقزام"})
+AddButton(Main, {
+  Name = "جسم قزم عادي",
+  Callback = function()
+local args = {
+    [1] = {
+        [1] = 14579958702,
+        [2] = 14579959062,
+        [3] = 14579959191,
+        [4] = 14579959249,
+        [5] = 14579963667,
+        [6] = 1
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "جسم قزم متوسط",
+  Callback = function()
+local args = {
+    [1] = {
+        [1] = 77813057823038,
+        [2] = 135110043370135,
+        [3] = 116607813654019,
+        [4] = 138966229804486,
+        [5] = 128961183894053,
+        [6] = 1
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "جسم قزم صغيره [ كيوت ] ",
+  Callback = function()
+local args = {
+    [1] = {
+        [1] = 120973199097564,
+        [2] = 118345433416023,
+        [3] = 112849465115864,
+        [4] = 78321005147549,
+        [5] = 106586789635639,
+        [6] = 1
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
+
+  end
+})
+local Main = MakeTab({Name = "كشف"})
+
+--[[
+  Name = "Main" <string> Nome da guia
+]]
+local Paragraph = AddParagraph(Main, {"كشف ESP"})
+local ESP = loadstring(game:HttpGet("https://kiriot22.com/releases/ESP.lua"))()
+ESP:Toggle(true)
+ESP.Players = false
+ESP.Names = false
+
+local Toggle = AddToggle(Main, {
+  Name = "فعلة",
+  Default = false,
+  Callback = function(Value)
+    ESP.Players = Value
+  end
+})
+
+local Toggle = AddToggle(Main, {
+  Name = "الاسامي الاعبين",
+  Default = false,
+  Callback = function(Value)
+    ESP.Names = Value
+  end
+})
+AddColorPicker(Main, {
+  Name = "لون ESP ",
+  Default = Color3.fromRGB(255, 255, 0),
+  Callback = function(Value)
+    ESP.Color = Value
+  end
+})
+local RunService = game:GetService("RunService")
+local Players = game:GetService("Players")
+local UIS = game:GetService("UserInputService")
+local Camera = workspace.CurrentCamera
+local LocalPlayer = Players.LocalPlayer
+
+local FOV_Size = 150
+
+local FOV_Circle = Drawing.new("Circle")
+FOV_Circle.Color = Color3.fromRGB(75, 0, 130)
+FOV_Circle.Thickness = 1
+FOV_Circle.Filled = false
+FOV_Circle.Radius = FOV_Size
+FOV_Circle.Visible = false
+
+local isAimingEnabled = false
+
+local function UpdateFOV()
+    local ScreenSize = Camera.ViewportSize
+    local CenterPosition = Vector2.new(ScreenSize.X / 2, ScreenSize.Y / 2)
+    FOV_Circle.Position = CenterPosition
+    FOV_Circle.Radius = FOV_Size
+end
+
+local function GetNearestTarget()
+    local ClosestPlayer = nil
+    local ShortestDistance = FOV_Size
+
+    for _, player in pairs(Players:GetPlayers()) do
+        if player ~= LocalPlayer and player.Character and player.Character:FindFirstChildOfClass("Humanoid") then
+            local RootPart = player.Character:FindFirstChild("HumanoidRootPart") or player.Character:FindFirstChild("Torso") or player.Character:FindFirstChild("UpperTorso")
+
+            if RootPart then
+                local TargetPosition, OnScreen = Camera:WorldToViewportPoint(RootPart.Position)
+
+                if OnScreen then
+                    local CenterPosition = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
+                    local Distance = (Vector2.new(TargetPosition.X, TargetPosition.Y) - CenterPosition).Magnitude
+
+                    if Distance < ShortestDistance then
+                        ClosestPlayer = player
+                        ShortestDistance = Distance
+                    end
+                end
+            end
+        end
+    end
+
+    return ClosestPlayer
+end
 local Main = MakeTab({Name = "الاعب"})
 
 --[[
@@ -448,6 +1120,744 @@ _G.boomboxb.Parent = game:GetService'Players'.LocalPlayer.Backpack
 loadstring(_G.boomboxb.Client.Source)() 
 loadstring(_G.boomboxb.Server.Source)()
  end
+})
+local Main = MakeTab({Name = "أشياء في اليد"})
+
+--[[
+  Name = "Main" <string> Nome da guia
+]]
+AddButton(Main, {
+  Name = "الكاميرا",
+  Callback = function()
+    local args = {
+    [1] = "PickingTools",
+    [2] = "DSLR Camera"
+}
+
+game:GetService("ReplicatedStorage").RE:FindFirstChild("1Too1l"):InvokeServer(unpack(args))
+
+  end
+})
+
+--[[
+  Name = "Botão teste" <string> nome do seu botão
+  Callback = function()
+    -- funcão do seu botão
+  end
+]]
+AddButton(Main, {
+  Name = "الدميه قرد",
+  Callback = function()
+    local args = {
+    [1] = "PickingTools",
+    [2] = "BabyMonkey"
+}
+
+game:GetService("ReplicatedStorage").RE:FindFirstChild("1Too1l"):InvokeServer(unpack(args))
+
+  end
+})
+
+--[[
+  Name = "Botão teste" <string> nome do seu botão
+  Callback = function()
+    -- funcão do seu botão
+  end
+]]
+AddButton(Main, {
+  Name = "الكاس",
+  Callback = function()
+    local args = {
+    [1] = "PickingTools",
+    [2] = "Trophy"
+}
+
+game:GetService("ReplicatedStorage").RE:FindFirstChild("1Too1l"):InvokeServer(unpack(args))
+
+  end
+})
+
+--[[
+  Name = "Botão teste" <string> nome do seu botão
+  Callback = function()
+    -- funcão do seu botão
+  end
+]]
+AddButton(Main, {
+  Name = "الساله",
+  Callback = function()
+  local args = {
+    [1] = "PickingTools",
+    [2] = "ShoppingCart"
+}
+
+game:GetService("ReplicatedStorage").RE:FindFirstChild("1Too1l"):InvokeServer(unpack(args))
+  
+  end
+})
+
+--[[
+  Name = "Botão teste" <string> nome do seu botão
+  Callback = function()
+    -- funcão do seu botão
+  end
+]]
+AddButton(Main, {
+  Name = "قنابل",
+  Callback = function()
+    local args = {
+    [1] = "PickingTools",
+    [2] = "Bomb"
+}
+
+game:GetService("ReplicatedStorage").RE:FindFirstChild("1Too1l"):InvokeServer(unpack(args))
+
+  end
+})
+
+--[[
+  Name = "Botão teste" <string> nome do seu botão
+  Callback = function()
+    -- funcão do seu botão
+  end
+]]
+AddButton(Main, {
+  Name = "لوحه",
+  Callback = function()
+    local args = {
+    [1] = "PickingTools",
+    [2] = "Sign"
+}
+
+game:GetService("ReplicatedStorage").RE:FindFirstChild("1Too1l"):InvokeServer(unpack(args))
+
+  end
+})
+
+--[[
+  Name = "Botão teste" <string> nome do seu botão
+  Callback = function()
+    -- funcão do seu botão
+  end
+]]
+AddButton(Main, {
+  Name = "حقيبه",
+  Callback = function()
+    local args = {
+    [1] = "PickingTools",
+    [2] = "Paperbag"
+}
+
+game:GetService("ReplicatedStorage").RE:FindFirstChild("1Too1l"):InvokeServer(unpack(args))
+
+  end
+})
+
+--[[
+  Name = "Botão teste" <string> nome do seu botão
+  Callback = function()
+    -- funcão do seu botão
+  end
+]]
+AddButton(Main, {
+  Name = "كنبة",
+  Callback = function()
+    local args={[1]="PickingTools",[2]="Couch"};game:GetService("ReplicatedStorage").RE:FindFirstChild("1Too1l"):InvokeServer(unpack(args))
+  end
+})
+AddButton(Main, {
+  Name = "رشاش ألوان",
+  Callback = function()
+   local args = {
+    [1] = "PickingTools",
+    [2] = "SprayCan"
+}
+
+game:GetService("ReplicatedStorage").RE:FindFirstChild("1Too1l"):InvokeServer(unpack(args))
+ 
+  end
+})
+
+--[[
+  Name = "Botão teste" <string> nome do seu botão
+  Callback = function()
+    -- funcão do seu botão
+  end
+]]
+AddButton(Main, {
+  Name = "كولا",
+  Callback = function()
+    local args = {
+    [1] = "PickingTools",
+    [2] = "Coke"
+}
+
+game:GetService("ReplicatedStorage").RE:FindFirstChild("1Too1l"):InvokeServer(unpack(args))
+
+  end
+})
+
+--[[
+  Name = "Botão teste" <string> nome do seu botão
+  Callback = function()
+    -- funcão do seu botão
+  end
+]]
+local Paragraph = AddParagraph(Main, {"الاسحله"})
+AddButton(Main, {
+  Name = "سلاح صغير",
+  Callback = function()
+    local args = {
+    [1] = "PickingTools",
+    [2] = "Glock"
+}
+
+game:GetService("ReplicatedStorage").RE:FindFirstChild("1Too1l"):InvokeServer(unpack(args))
+
+  end
+})
+
+--[[
+  Name = "Botão teste" <string> nome do seu botão
+  Callback = function()
+    -- funcão do seu botão
+  end
+]]
+AddButton(Main, {
+  Name = "2سلاح صغير",
+  Callback = function()
+   local args = {
+    [1] = "PickingTools",
+    [2] = "GlockBrown"
+}
+
+game:GetService("ReplicatedStorage").RE:FindFirstChild("1Too1l"):InvokeServer(unpack(args))
+ 
+  end
+})
+
+--[[
+  Name = "Botão teste" <string> nome do seu botão
+  Callback = function()
+    -- funcão do seu botão
+  end
+]]
+AddButton(Main, {
+  Name = "شودكن",
+  Callback = function()
+    local args = {
+    [1] = "PickingTools",
+    [2] = "Shotgun"
+}
+
+game:GetService("ReplicatedStorage").RE:FindFirstChild("1Too1l"):InvokeServer(unpack(args))
+
+  end
+})
+
+--[[
+  Name = "Botão teste" <string> nome do seu botão
+  Callback = function()
+    -- funcão do seu botão
+  end
+]]
+AddButton(Main, {
+  Name = "رشاش",
+  Callback = function()
+    local args = {
+    [1] = "PickingTools",
+    [2] = "Assault"
+}
+
+game:GetService("ReplicatedStorage").RE:FindFirstChild("1Too1l"):InvokeServer(unpack(args))
+
+  end
+})
+
+--[[
+  Name = "Botão teste" <string> nome do seu botão
+  Callback = function()
+    -- funcão do seu botão
+  end
+]]
+AddButton(Main, {
+  Name = "سنيابر",
+  Callback = function()
+    local args = {
+    [1] = "PickingTools",
+    [2] = "Sniper"
+}
+
+game:GetService("ReplicatedStorage").RE:FindFirstChild("1Too1l"):InvokeServer(unpack(args))
+
+  end
+})
+
+--[[
+  Name = "Botão teste" <string> nome do seu botão
+  Callback = function()
+    -- funcão do seu botão
+  end
+]]
+local Main = MakeTab({Name = "أكواد سكنات"})
+
+--[[
+  Name = "Main" <string> Nome da guia
+]]
+local section = AddSection(Main, {"باقات ورد"})
+AddButton(Main, {
+  Name = "ورد اسود",
+  Callback = function()
+local args = {
+    [1] = 12465465333
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "ورد احمر",
+  Callback = function()
+local args = {
+    [1] = 86738633187728
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "ورد ابيض",
+  Callback = function()
+local args = {
+    [1] = 72175664063418
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "ورد وردي",
+  Callback = function()
+local args = {
+    [1] = 12465478536
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+local section = AddSection(Main, {"حذاء شيطان"})
+AddButton(Main, {
+  Name = "حذاء اسود",
+  Callback = function()
+local args = {
+    [1] = 14388004031
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "حذاء ابيض",
+  Callback = function()
+local args = {
+    [1] = 14388009243
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "حذاء وردي",
+  Callback = function()
+local args = {
+    [1] = 14388006902
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "حذاء اسود احمر",
+  Callback = function()
+local args = {
+    [1] = 14388001192
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "حذاء احمر واسود",
+  Callback = function()
+local args = {
+    [1] = 14388019333
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+local section = AddSection(Main, {"احذيه طويله"})
+AddButton(Main, {
+  Name = "حذاء طويل اسود",
+  Callback = function()
+local args = {
+    [1] = 11433864064
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "حذاء طويل ابيض",
+  Callback = function()
+local args = {
+    [1] = 11111279400
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "حذاء طويل احمر وابيض",
+  Callback = function()
+local args = {
+    [1] = 11708887517
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+local section = AddSection(Main, {"قفازات طويله"})
+AddButton(Main, {
+  Name = "قفاز طويل اسود ",
+  Callback = function()
+local args = {
+    [1] = 10789914680
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "قفاز طويل احمر",
+  Callback = function()
+local args = {
+    [1] = 15209194774
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "قفاز طويل ابيض",
+  Callback = function()
+local args = {
+    [1] = 10789933479
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "قفاز طويل ازرق",
+  Callback = function()
+local args = {
+    [1] = 10789945803
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "قفاز طويل وردي",
+  Callback = function()
+local args = {
+    [1] = 10789939838
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "قفاز طويل أخضر",
+  Callback = function()
+local args = {
+    [1] = 13233318125
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+local section = AddSection(Main, {"قفازات قصيره"})
+AddButton(Main, {
+  Name = "قفاز قصير اسود",
+  Callback = function()
+local args = {
+    [1] = 14915193711
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "قفاز قصير ابيض",
+  Callback = function()
+local args = {
+    [1] = 15066901505
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "قفاز قصير ازرق",
+  Callback = function()
+local args = {
+    [1] = 10714157708
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "قفاز قصير وردي",
+  Callback = function()
+local args = {
+    [1] = 17775444165
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "قفاز قصير اخضر",
+  Callback = function()
+local args = {
+    [1] = 10713817180
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+local section = AddSection(Main, {"أشواك في الجسم"})
+AddButton(Main, {
+  Name = "شوك اسود",
+  Callback = function()
+local args = {
+    [1] = 17406577951
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "شوك ابيض",
+  Callback = function()
+local args = {
+    [1] = 17406634097
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "شوك اسود في جميع أجزاء الجسم",
+  Callback = function()
+local args = {
+    [1] = 13463285148
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+local section = AddSection(Main, {"جايكتات اولاد"})
+AddButton(Main, {
+  Name = "جاكيت اسود",
+  Callback = function()
+local args = {
+    [1] = 9048321833
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "جاكيت اسود مزخرف ابيض",
+  Callback = function()
+local args = {
+    [1] = 15154273975
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+local section = AddSection(Main, {"جايكتات بنوتات"})
+AddButton(Main, {
+  Name = "جاكيت اسود",
+  Callback = function()
+local args = {
+    [1] = 14900095685
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+AddButton(Main, {
+  Name = "جاكيت ابيض",
+  Callback = function()
+local args = {
+    [1] = 14849843673
+}
+
+game:GetService("ReplicatedStorage").Remotes.Wear:InvokeServer(unpack(args))
+
+  end
+})
+local Main = MakeTab({Name = "تخريب ماب"})  
+AddSection(Main, {"تخريب يطلع بس الك"})
+AddButton(Main, {
+  Name = "تخريب",
+  Callback = function()
+    local s = Instance.new("Sky")
+    s.Name = "Sky"
+    s.Parent = game.Lighting
+
+    local skyboxID = 94946856358988
+    local skyboxURL = "http://www.roblox.com/asset/?id="..skyboxID
+
+    s.SkyboxBk = skyboxURL
+    s.SkyboxDn = skyboxURL
+    s.SkyboxFt = skyboxURL
+    s.SkyboxLf = skyboxURL
+    s.SkyboxRt = skyboxURL
+    s.SkyboxUp = skyboxURL
+
+    game.Lighting.TimeOfDay = "12:00:00"
+  end
+})
+AddButton(Main, {
+  Name = "تخريب",
+  Callback = function()
+  local decalID = 94946856358988
+function exPro(root)
+   for _, v in pairs(root:GetChildren()) do
+      if v:IsA("Decal") and v.Texture ~= "http://www.roblox.com/asset/?id="..decalID then
+         v.Parent = nil
+      elseif v:IsA("BasePart") then
+         v.Material = "Plastic"
+         v.Transparency = 0
+         for _, face in ipairs({"Front", "Back", "Right", "Left", "Top", "Bottom"}) do
+            local d = Instance.new("Decal", v)
+            d.Texture = "http://www.roblox.com/asset/?id="..decalID
+            d.Face = face
+         end
+      end
+      exPro(v)
+   end
+end
+
+function asdf(root)
+   for _, v in pairs(root:GetChildren()) do
+      asdf(v)
+   end
+end
+
+exPro(game.Workspace)
+asdf(game.Workspace)
+  end
+})
+AddButton(Main, {
+  Name = "تخريب",
+  Callback = function()
+  -- Configuration --
+local Message = "THIS GAME HAS BEEN HACKED BY CONCHKIDD"
+local mes2text = "YOU ALL MUST PERISH IN MY FIRE OF DEATH!"
+
+-- Don't touch unless you know what You're doing --
+
+local mes = Instance.new("Hint")
+mes.Parent = workspace
+mes.Text = Message
+game.Lighting:ClearAllChildren()
+game.Lighting.FogEnd = 100
+game.Lighting.FogColor = Color3.new(0, 0, 0)
+local sound = Instance.new("Sound")
+sound.Parent = workspace
+sound.Looped = true
+sound.PlaybackSpeed = 0.3
+sound.Volume = 5
+sound.SoundId = "rbxassetid://1842908121"
+sound:Play()
+local mes2 = Instance.new("Message")
+mes2.Parent = workspace
+mes2.Text = mes2text
+for i, v in pairs(workspace:GetDescendants()) do
+	if v:IsA("BasePart") and v.Parent:IsA("Model") then
+		local outline = Instance.new("SelectionBox")
+		v.Name = Message
+		outline.Parent = v
+		outline.Adornee = v
+		outline.Color3 = Color3.new(1, 1, 1)
+		v.Color = Color3.new(0, 0, 0)
+		local fire = Instance.new("Fire")
+		fire.Parent = v
+		fire.Size = 100
+		fire.Color = Color3.new(1, 1, 1)
+		local sky = Instance.new("Sky")
+		sky.CelestialBodiesShown = false
+		sky.Parent = game.Lighting
+		sky.SkyboxUp = "http://www.roblox.com/asset/?id=99915080584370"
+		sky.SkyboxBk = "http://www.roblox.com/asset/?id=99915080584370"
+		sky.SkyboxDn = "http://www.roblox.com/asset/?id=99915080584370"
+		sky.SkyboxRt = "http://www.roblox.com/asset/?id=99915080584370"
+		sky.SkyboxLf = "http://www.roblox.com/asset/?id=99915080584370"
+		sky.SkyboxFt = "http://www.roblox.com/asset/?id=99915080584370"
+		local bill = Instance.new("BillboardGui")
+		local Text = Instance.new("TextLabel")
+		bill.Parent = v
+		bill.Adornee = v
+		bill.Size = UDim2.new(0, 200, 0, 200)
+		Text.Parent = bill
+		Text.Size = UDim2.new(0, 200, 0, 200)
+		Text.BackgroundTransparency = 1
+		Text.TextScaled = false
+		Text.TextSize = 30
+		Text.TextColor3 = Color3.new(1, 0, 0.0156863)
+		Text.TextTransparency = 0
+		Text.Font = Enum.Font.Cartoon
+		Text.Text = Message
+	end
+end
+  end
 })
 local Main = MakeTab({Name = "تخريب"})
 
@@ -1558,6 +2968,62 @@ local args = {
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1NoMoto1rVehicle1s"):FireServer(unpack(args))
   end
 })
+local Main = MakeTab({Name = "كيم باسات"})
+AddButton(Main, {
+  Name = "شات Premium",
+  Callback = function()
+MakeNotifi({
+  Title = "TRADEX",
+  Text = "تم صار عندك  شات نجمه حقيقي",
+  Time = 3
+})
+ game:GetService("Players").LocalPlayer.PlayersBag.SilverPass.Value = true
+  end
+})
+AddButton(Main, {
+  Name = "نجمة",
+  Callback = function()
+ MakeNotifi({
+  Title = "TRADEX",
+  Text = "تم صار عندك نجمه",
+  Time = 3
+})
+game:GetService("Players").LocalPlayer.PlayersBag.SilverPass.Value = true
+  end
+})
+AddButton(Main, {
+  Name = "نجمه مال اطفال",
+  Callback = function()
+ MakeNotifi({
+  Title = "TRADEX",
+  Text = "تم صار عندك  نجمه مال اطفال ",
+  Time = 3
+})
+ game:GetService("Players").LocalPlayer.PlayersBag.FacePass.Value = true
+  end
+})
+AddButton(Main, {
+  Name = "اغاني",
+  Callback = function()
+MakeNotifi({
+  Title = "TRADEX",
+  Text = "تم صار عندك  اغاني",
+  Time = 3
+})
+ game:GetService("Players").LocalPlayer.PlayersBag.MusicPass.Valve = true
+  end
+})
+AddButton(Main, {
+  Name = "Fire",
+  Callback = function()
+MakeNotifi({
+  Title = "TRADEX",
+  Text = "تم صار عندك  Fire",
+  Time = 3
+})
+ game:GetService("Players").LocalPlayer.PlayersBag.FirePass.Valve = true
+  end
+})
 local Main = MakeTab({Name = "تلبورت - TP"})
 
 --[[
@@ -1915,7 +3381,7 @@ AddButton(Main, {
       Color3.fromRGB(255, 0, 0),     
       Color3.fromRGB(255, 127, 0),   
       Color3.fromRGB(255, 255, 0),  
-      Color3.fromRGB(128, 0, 128),   
+      Color3.fromRGB(0, 255, 0),   
       Color3.fromRGB(0, 0, 255),     
       Color3.fromRGB(75, 0, 130),    
       Color3.fromRGB(148, 0, 211)    
