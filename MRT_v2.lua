@@ -1,5 +1,4 @@
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/R7KScript/usernaxo/refs/heads/main/GUI3")))()
-MakeWindow({
+loadstring(game:HttpGet("https://raw.githubusercontent.com/mourad1-hub/Gui/refs/heads/main/README.lua"))()MakeWindow({
   Hub = {
     Title = "MRT BROOKHAVEN V2",
     Animation = "ABBAS SCRIPT"
