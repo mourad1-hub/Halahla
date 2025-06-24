@@ -70,8 +70,16 @@ local args = {
     [1] = "RolePlayName",
     [2] = "MRT_V2"
 }
-game.Players.LocalPlayer.TeamColor = BrickColor.new("Royal purple")
+local player = game.Players.LocalPlayer
+local Teams = game:GetService("Teams")
 
+local purpleTeam = Teams:FindFirstChild("Royal purple") or Teams:FindFirstChild("Purple")
+
+if purpleTeam then
+    player.Team = purpleTeam
+else
+    warn("Purple team not found!")
+end
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1RPNam1eTex1t"):FireServer(unpack(args))
 wait(0.1)
 game.StarterGui:SetCore("SendNotification", {
