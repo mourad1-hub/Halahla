@@ -43,7 +43,7 @@ local Main = MakeTab({Name = "معلومات"})
   Name = "Main" <string> Nome da guia
 ]]
 local Image = AddImageLabel(Main, {Name = "M", Image = "rbxassetid://135207208601826", BackgroundColor = Color3.fromRGB(0, 0, 0)})
-local Paragraph = AddParagraph(Main, {"سكربت MRT_V2 عباره عن مجموعه كبيره من مميزات"})
+local Paragraph = AddParagraph(Main, {"MRT_V2"})
 
 
 
@@ -69,13 +69,14 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1RPNam1eTex1t"):FireServ
 local args = {
     [1] = "RolePlayName",
     [2] = "MRT_V2"
+    [3] = Color3.fromRGB(148, 0, 211)
 }
 
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1RPNam1eTex1t"):FireServer(unpack(args))
 wait(0.1)
 game.StarterGui:SetCore("SendNotification", {
     Title = "انتصر";
-    Text = "جاري تحميل..."; -- ARAB TEAM
+    Text = "جاري تحميل..."; -- MRT_V2
     
     Duration = 5;
 })
@@ -83,7 +84,7 @@ wait(0.1)
 game.StarterGui:SetCore("SendNotification", {
     Title = " تم اشتغل ";
     Text = "MRT_V2";
-      Image = "rbxassetid://136300057076089"; -- ARAB TEAM
+      Image = "rbxassetid://136300057076089"; -- MRT_V2
     Duration = 5;
 })
 AddButton(Main, {
