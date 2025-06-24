@@ -46,6 +46,7 @@ local Image = AddImageLabel(Main, {Name = "M", Image = "rbxassetid://13520720860
 local Paragraph = AddParagraph(Main, {"سكربت MRT_V2 عباره عن مجموعه كبيره من مميزات"})
 
 
+
 MinimizeButton({
 Image = "rbxassetid://94901238836721",
 Size = {55, 55},
@@ -57,6 +58,7 @@ StrokeTransparency = 0,
 Text = "M",
 TextColor = Color3.fromRGB(170, 0, 255)
 })
+
 
 local args = {
     [1] = "RolePlayBio",
@@ -147,266 +149,6 @@ local Main = MakeTab({Name = "سكربت MRT_V2ات"})
 ]]
 local section = AddSection(Main, {"سكربت MRT_V2ات من صنع مطورين "})
 local section = AddSection(Main, {"سكربت MRT_V2ات عشوائية"})
-local Main = MakeTab({Name = "الاجسام"})
-
---[[
-  Name = "Main" <string> Nome da guia
-]]
-AddButton(Main, {
-  Name = "جسم بنت 1",
-  Callback = function()
-local args = {
-    [1] = {
-        [1] = 96491916349570,
-        [2] = 76683091425509,
-        [3] = 75159926897589,
-        [4] = 1,
-        [5] = 1,
-        [6] = 1
-    }
-}
-
-game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "جسم بنت 2",
-  Callback = function()
-local args = {
-    [1] = {
-        [1] = 96491916349570,
-        [2] = 14854350570,
-        [3] = 14854350451,
-        [4] = 1,
-        [5] = 1,
-        [6] = 1
-    }
-}
-
-game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "جسم بنت 3",
-  Callback = function()
-local args = {
-    [1] = {
-        [1] = 74302534603111,
-        [2] = 76683091425509,
-        [3] = 75159926897589,
-        [4] = 1,
-        [5] = 1,
-        [6] = 1
-    }
-}
-
-game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "جسم بنت 4",
-  Callback = function()
-local args = {
-    [1] = {
-        [1] = 16214246112,
-        [2] = 76683091425509,
-        [3] = 16214251181,
-        [4] = 1,
-        [5] = 1,
-        [6] = 1
-    }
-}
-
-game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "جسم بنت 5",
-  Callback = function()
-local args = {
-    [1] = {
-        [1] = 124754866635882,
-        [2] = 76683091425509,
-        [3] = 75159926897589,
-        [4] = 1,
-        [5] = 1,
-        [6] = 1
-    }
-}
-
-game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "جسم بنت 6",
-  Callback = function()
-local args = {
-    [1] = {
-        [1] = 18839824113,
-        [2] = 18839824209,
-        [3] = 18839824132,
-        [4] = 1,
-        [5] = 1,
-        [6] = 1
-    }
-}
-
-game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "جسم بنت 7",
-  Callback = function()
-local args = {
-    [1] = {
-        [1] = 15539008532,
-        [2] = 15539008875,
-        [3] = 15539008680,
-        [4] = 15539008795,
-        [5] = 15539011945,
-        [6] = 1
-    }
-}
-
-game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
-
-  end
-})
-local section = AddSection(Main, {"أجسام اولاد نحيفين"})
-AddButton(Main, {
-  Name = "جسم ولد نحيف 1",
-  Callback = function()
-local args = {
-    [1] = {
-        [1] = 17754346388,
-        [2] = 1,
-        [3] = 1,
-        [4] = 1,
-        [5] = 1,
-        [6] = 1
-    }
-}
-
-game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "جسم ولد نحيف 2",
-  Callback = function()
-local args = {
-    [1] = {
-        [1] = 92757812011061,
-        [2] = 99519402284266,
-        [3] = 115905570886697,
-        [4] = 1,
-        [5] = 1,
-        [6] = 1
-    }
-}
-
-game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
-
-  end
-})
-local section = AddSection(Main, {"أجسام اولاد مشهوره وجميله "})
-AddButton(Main, {
-  Name = "جسم ولد كوبي",
-  Callback = function()
-local args = {
-    [1] = {
-        [1] = 86499666,
-        [2] = 27112039,
-        [3] = 27112052,
-        [4] = 27112068,
-        [5] = 27112056,
-        [6] = 1
-    }
-}
-
-game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "جسم ولد رول",
-  Callback = function()
-local args = {
-    [1] = {
-        [1] = 27112025,
-        [2] = 27112039,
-        [3] = 27112052,
-        [4] = 3230472745,
-        [5] = 3230470862,
-        [6] = 1
-    }
-}
-
-game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
-
-  end
-})
-local section = AddSection(Main, {"أجسام اقزام"})
-AddButton(Main, {
-  Name = "جسم قزم عادي",
-  Callback = function()
-local args = {
-    [1] = {
-        [1] = 14579958702,
-        [2] = 14579959062,
-        [3] = 14579959191,
-        [4] = 14579959249,
-        [5] = 14579963667,
-        [6] = 1
-    }
-}
-
-game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "جسم قزم متوسط",
-  Callback = function()
-local args = {
-    [1] = {
-        [1] = 77813057823038,
-        [2] = 135110043370135,
-        [3] = 116607813654019,
-        [4] = 138966229804486,
-        [5] = 128961183894053,
-        [6] = 1
-    }
-}
-
-game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
-
-  end
-})
-AddButton(Main, {
-  Name = "جسم قزم صغيره [ كيوت ] ",
-  Callback = function()
-local args = {
-    [1] = {
-        [1] = 120973199097564,
-        [2] = 118345433416023,
-        [3] = 112849465115864,
-        [4] = 78321005147549,
-        [5] = 106586789635639,
-        [6] = 1
-    }
-}
-
-game:GetService("ReplicatedStorage").Remotes.ChangeCharacterBody:InvokeServer(unpack(args))
-
-  end
-})
 local Main = MakeTab({Name = "الاعب"})
 
 --[[
@@ -2506,3 +2248,30 @@ local function updateRPColors()
     end)
 end
 updateRPColors()
+
+
+
+local function applyColorToRoleText()
+    local color = Color3.fromRGB(170, 0, 255)
+    local function setColor()
+        local char = game.Players.LocalPlayer.Character
+        if not char then return end
+        local head = char:FindFirstChild("Head")
+        if head then
+            for _, gui in pairs(head:GetChildren()) do
+                if gui:IsA("BillboardGui") then
+                    for _, label in pairs(gui:GetChildren()) do
+                        if label:IsA("TextLabel") and (label.Text == "MRT_V2" or label.Text:find("البحث:MRT_V2")) then
+                            label.TextColor3 = color
+                        end
+                    end
+                end
+            end
+        end
+    end
+    game.Players.LocalPlayer.CharacterAdded:Connect(setColor)
+    if game.Players.LocalPlayer.Character then
+        setColor()
+    end
+end
+applyColorToRoleText()
