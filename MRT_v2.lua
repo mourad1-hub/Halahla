@@ -69,8 +69,8 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1RPNam1eTex1t"):FireServ
 local args = {
     [1] = "RolePlayName",
     [2] = "MRT_V2"
-    [3] = Color3.fromRGB(148, 0, 211)
 }
+game.Players.LocalPlayer.TeamColor = BrickColor.new("Royal purple")
 
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1RPNam1eTex1t"):FireServer(unpack(args))
 wait(0.1)
