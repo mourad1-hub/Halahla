@@ -47,17 +47,17 @@ local Paragraph = AddParagraph(Main, {"سكربت MRT_V2 عباره عن مجم�
 
 
 
+
 MinimizeButton({
-Image = "rbxassetid://94901238836721",
-Size = {55, 55},
-Color = Color3.fromRGB(10, 10, 10),
-Corner = true,
-Stroke = true,
-StrokeColor = Color3.fromRGB(170, 0, 255),
-StrokeTransparency = 0,
-Text = "M",
-TextColor = Color3.fromRGB(170, 0, 255)
+    Image = "rbxassetid://135207208601826",
+    Size = {55, 55},
+    Color = Color3.fromRGB(10, 10, 10),
+    Corner = true,
+    Stroke = true,
+    StrokeColor = Color3.fromRGB(170, 0, 255),
+    StrokeTransparency = 0
 })
+
 
 
 local args = {
